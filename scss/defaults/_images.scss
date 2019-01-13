@@ -1,0 +1,20 @@
+/*###########################################################################
+  Default image styles
+  ########################################################################### */
+
+
+/*- Responsive images.
+  --------------------------------------------------------------------------  */
+
+img {
+  max-width:  100%;
+  max-height: inherit; // NOTE:  in what situations is this bad?
+  width:      auto;  // NOTE:  should this ever be used?
+  height:     auto;
+}
+
+.img-block {
+  img {
+    display: block; // This is needed because Drupal!
+  }
+}

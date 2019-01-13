@@ -1,0 +1,65 @@
+/*###########################################################################
+  Margin utility classes
+  ########################################################################### */
+
+
+/*- Classes
+  --------------------------------------------------------------------------  */
+
+.m0  { margin:        0 }
+.mt0 { margin-top:    0 !important }
+.mr0 { margin-right:  0 }
+.mb0 { margin-bottom: 0 }
+.ml0 { margin-left:   0 }
+.mx0 { margin-left:   0; margin-right:  0 }
+.my0 { margin-top:    0; margin-bottom: 0 }
+
+.m1  { margin:        ($SPACING_1) }
+.mt1 { margin-top:    ($SPACING_1) }
+.mr1 { margin-right:  ($SPACING_1) }
+.mb1 { margin-bottom: ($SPACING_1) }
+.ml1 { margin-left:   ($SPACING_1) }
+.mx1 { margin-left:   ($SPACING_1); margin-right:  ($SPACING_1) }
+.my1 { margin-top:    ($SPACING_1); margin-bottom: ($SPACING_1) }
+
+.m2  { margin:        ($SPACING_2) }
+.mt2 { margin-top:    ($SPACING_2) }
+.mr2 { margin-right:  ($SPACING_2) }
+.mb2 { margin-bottom: ($SPACING_2) }
+.ml2 { margin-left:   ($SPACING_2) }
+.mx2 { margin-left:   ($SPACING_2); margin-right:  ($SPACING_2) }
+.my2 { margin-top:    ($SPACING_2); margin-bottom: ($SPACING_2) }
+
+.m3  { margin:        ($SPACING_3) }
+.mt3 { margin-top:    ($SPACING_3) }
+.mr3 { margin-right:  ($SPACING_3) }
+.mb3 { margin-bottom: ($SPACING_3) }
+.ml3 { margin-left:   ($SPACING_3) }
+.mx3 { margin-left:   ($SPACING_3); margin-right:  ($SPACING_3) }
+.my3 { margin-top:    ($SPACING_3); margin-bottom: ($SPACING_3) }
+
+.m4  { margin:        ($SPACING_4) }
+.mt4 { margin-top:    ($SPACING_4) }
+.mr4 { margin-right:  ($SPACING_4) }
+.mb4 { margin-bottom: ($SPACING_4) }
+.ml4 { margin-left:   ($SPACING_4) }
+.mx4 { margin-left:   ($SPACING_4); margin-right:  ($SPACING_4) }
+.my4 { margin-top:    ($SPACING_4); margin-bottom: ($SPACING_4) }
+
+.m5  { margin:        ($SPACING_5) }
+.mt5 { margin-top:    ($SPACING_5) }
+.mr5 { margin-right:  ($SPACING_5) }
+.mb5 { margin-bottom: ($SPACING_5) }
+.ml5 { margin-left:   ($SPACING_5) }
+.mx5 { margin-left:   ($SPACING_5); margin-right:  ($SPACING_5) }
+.my5 { margin-top:    ($SPACING_5); margin-bottom: ($SPACING_5) }
+
+.ml-auto { margin-left: auto }
+.mr-auto { margin-right: auto }
+.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+
+/*- Bootstrap negative margins
+--------------------------------------------------------------------------  */
+
+.mxnbs { margin-left: -($grid-gutter-width / 2); margin-right: -($grid-gutter-width / 2);}

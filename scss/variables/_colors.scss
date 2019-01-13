@@ -1,0 +1,30 @@
+/*###########################################################################
+  Color variables used across the site
+  ########################################################################### */
+
+/*- Main Colors
+  --------------------------------------------------------------------------  */
+
+$SPRUCE:      #1b3241; // Main Prettys blue
+$STILLETO:    #a7002f; // Main Prettys red
+$DIXIE:       #e39a1e; // Specialist yellow
+$FLASH:       //#F4F4F6; // Background color for some sections. can be #ECECEC too.
+              #ECECEC;
+$ELM:         #1a7783; // Individuals blue-grey
+$SPRING:      #548c62; // News / events
+$LOCUST:      #abaf8e; // Articles / publications
+$AMOUR:       #f7e8ea; // Blog item background color
+$BLACK_PEARL: #1f252c; // Prettys grey / dark font color
+$PAPER:       #ffffff; // White / light font color
+$LILY_WHITE:  #393b41; // Darker background color
+
+
+
+
+/*- Font color settings
+  --------------------------------------------------------------------------  */
+
+$FONT_LIGHT:       $PAPER;
+$FONT_DARK:        $BLACK_PEARL;
+$LINK_COLOR:       $SPRUCE;
+$LINK_HOVER_COLOR: $STILLETO;

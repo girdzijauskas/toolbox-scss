@@ -1,0 +1,63 @@
+/*###########################################################################
+  Border utility classes
+  ########################################################################### */
+
+/*- Border radii
+  --------------------------------------------------------------------------  */
+
+.b-r-50p {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.b-r-10 {
+  border-radius: 10px;
+}
+
+/*- Border reset
+  --------------------------------------------------------------------------  */
+
+.b-none {
+  border: none;
+}
+
+
+/*- Border widths
+  --------------------------------------------------------------------------  */
+
+.b-s-5 {
+  border-width: 5px;
+}
+
+.b-s-10 {
+  border-width: 10px;
+}
+
+
+/*- Border colors
+  --------------------------------------------------------------------------  */
+
+.b-c-white {
+  border-color: $PAPER;
+}
+
+.b-c-stilleto {
+  border-color: $STILLETO;
+}
+
+.b-c-spruce {
+  border-color: $SPRUCE;
+}
+
+
+/*- Full border utility classes
+--------------------------------------------------------------------------  */
+
+.border-1-stilleto {
+  border-bottom: 1px solid $STILLETO;
+}
+
+.border-2 {
+  border-width: 2px;
+  border-style: solid;
+}

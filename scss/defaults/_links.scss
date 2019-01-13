@@ -1,0 +1,23 @@
+/*###########################################################################
+  Default link styles
+  ########################################################################### */
+
+a {
+  color:           inherit; // this is much easier to deal with.
+  text-decoration: inherit; // NOTE:  might be not necessary?
+  font-weight:     inherit;
+  font-family:     inherit;
+  text-transform:  inherit;
+  font-size:       inherit;
+}
+
+/*- Overriding the Classy menu styles
+--------------------------------------------------------------------------  */
+
+ul.main-menu {
+  a {
+    &:hover, &.is-active {
+      color: $LINK_HOVER_COLOR;
+    }
+  }
+}

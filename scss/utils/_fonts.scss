@@ -1,0 +1,71 @@
+/*###########################################################################
+  Font utility classes
+  ########################################################################### */
+
+
+/*- Font family mixins
+  --------------------------------------------------------------------------  */
+
+%f-gotham-bold {
+  font-family: $GOTHAM_BOLD;
+}
+
+%f-gotham-light {
+  font-family: $GOTHAM_LIGHT;
+}
+
+%f-heading {
+  font-family: $FONT_HEADING;
+}
+
+%f-body {
+  font-family: $FONT_BODY;
+}
+
+
+/*- Font family utilities
+  --------------------------------------------------------------------------  */
+
+.f-gotham-bold {
+  @extend %f-gotham-bold;
+}
+
+.f-gotham-light {
+  @extend %f-gotham-light;
+}
+
+.f-heading {
+  @extend %f-heading;
+}
+
+.f-body {
+  @extend %f-body;
+}
+
+
+/*- Generic font utilities
+  --------------------------------------------------------------------------  */
+
+.bold, strong {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.text-decoration-reset {
+  text-decoration: none;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

@@ -1,0 +1,30 @@
+/*###########################################################################
+  All styles for webforms / buttons / input fields
+  ########################################################################### */
+
+/*- Input fields
+  --------------------------------------------------------------------------  */
+
+input {
+  min-height: 40px; // NOTE: If you wish to increase the padding of any form
+  // element, it is generally better to use the 'min-height' property instead of
+  // using padding - there is an IE bug that when padding is applied to input
+  // elemenets they force the placeholder / typed text to disappear from view.
+  padding-left: 10px;
+
+  // Resetting the border styles
+  border: none;
+  color: $FONT_DARK; // The text on the input fields will generally be dark -
+  // the most common exclusion to this is the Submit button, which should be
+  // overriden individually.
+
+  max-width: 100%;
+}
+
+input.button {
+  color: $FONT_LIGHT;
+}
+
+.form-tel {
+  width: 100%;
+}

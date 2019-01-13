@@ -1,0 +1,56 @@
+/*###########################################################################
+  Font-size variables
+  ########################################################################### */
+
+
+// QUESTION: How do you make these fully responsive?
+
+// ANSWER: using the fluid typography calc() function - currently using this
+// only on H1 tags. That is why you see a $REM variable with px, a unitless
+// version, and a 'half the REM' font size variable - $FS_H1_HALF. Since
+// $FS_H1_HALF is 2, that means the font size is 4rem (twice), which results in
+// 64px; The media query combined with the calc() function will allow the H1
+// font size to flow between 2rem and 4rem (32px and 64px, for a 16px root font
+// size)
+
+// UPDATE: also using this H2 tags as well, but I'm trying to scale them from
+// 1.2rem -> 2rem instead of FONT_SIZE / 2 -> FONT_SIZE. Might be a more complex
+// calc function...
+
+// For the actual usage of these variables, look @ /defaults/_fonts.scss
+
+
+/*- Font sizes
+  --------------------------------------------------------------------------  */
+
+$FS_BASE:      16px;
+$ulFS_BASE:    16;
+
+$FS_H1_HALF: 2;
+$FS_H1:      2 * $FS_H1_HALF * $FS_BASE;
+$FS_H2_SCALING: 1.2;
+$FS_H2_HALF: 1;
+$FS_H2:      2 * $FS_H2_HALF * $FS_BASE;
+$FS_H3:      1.1 * $FS_BASE;
+$FS_H4:      1.5 * $FS_BASE;
+$FS_H5:      1.25 * $FS_BASE;
+$FS_H6:      1 * $FS_BASE;
+$FS_P:       1 * $FS_BASE;
+$FS_BODY:    1 * $FS_BASE;
+$FS_SMALL:   0.8 * $FS_BASE;
+
+
+/*- Line heights
+  --------------------------------------------------------------------------  */
+
+$LH_BASE: 1.4;
+$LH_MED:  1.6;
+$LH_LG:   1.75;
+
+
+/*- Letter Spacings
+  --------------------------------------------------------------------------  */
+
+$LS_BASE: 0.01em;
+$LS_MED:  0.02em;
+$LS_LG:   0.03em;

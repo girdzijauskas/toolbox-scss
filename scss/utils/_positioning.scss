@@ -1,0 +1,53 @@
+/*###########################################################################
+  Positioning utility classes
+  ########################################################################### */
+
+
+/*- Common basics
+  --------------------------------------------------------------------------  */
+
+.absolute {
+  position: absolute !important; // Be careful with these !importants, in case
+  // there is positioning that would change upon interaction and this class
+  // prevents overriding. You'd have to use JS to change classes instead.
+}
+
+.relative {
+  position: relative !important;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+
+/*- Specific positioning classes
+  --------------------------------------------------------------------------  */
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.center {
+  transform: translate(-50%, -50%);
+  top:       50%;
+  left:      50%;
+  position:  absolute;
+}
+
+.center-vertical {
+  transform: translateY(-50%);
+  top: 50%;
+}
