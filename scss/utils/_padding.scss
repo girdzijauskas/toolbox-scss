@@ -2,54 +2,49 @@
   Padding utility classes
   ########################################################################### */
 
-
-/*- Padding classes
+/*- Creates all of the margin spacing classes
   --------------------------------------------------------------------------  */
 
-.p0  { padding: 0 }
-.pt0 { padding-top: 0 }
-.pr0 { padding-right: 0 }
-.pb0 { padding-bottom: 0 }
-.pl0 { padding-left: 0 }
-.px0 { padding-left: 0; padding-right:  0 }
-.py0 { padding-top: 0;  padding-bottom: 0 }
+// Loops over the spacingMap, combining the spacings with the directions
+// @$suffix: 0, 1, 2, 3, 4, 5
+// @$spacing: 0, 0.5em, 1em, 2em, 4em, etc.
+@each $suffix, $spacing in $spacingMap {
 
-.p1  { padding:        ($SPACING_1) }
-.pt1 { padding-top:    ($SPACING_1) }
-.pr1 { padding-right:  ($SPACING_1) }
-.pb1 { padding-bottom: ($SPACING_1) }
-.pl1 { padding-left:   ($SPACING_1) }
-.py1 { padding-top:    ($SPACING_1); padding-bottom: ($SPACING_1) }
-.px1 { padding-left:   ($SPACING_1); padding-right:  ($SPACING_1) }
 
-.p2  { padding:        ($SPACING_2) }
-.pt2 { padding-top:    ($SPACING_2) }
-.pr2 { padding-right:  ($SPACING_2) }
-.pb2 { padding-bottom: ($SPACING_2) }
-.pl2 { padding-left:   ($SPACING_2) }
-.py2 { padding-top:    ($SPACING_2); padding-bottom: ($SPACING_2) }
-.px2 { padding-left:   ($SPACING_2); padding-right:  ($SPACING_2) }
+  // Loops over the directionsMap using their prefix and the directions
+  // @$prefix: null, t, r, b, l, x, y
+  // @$directions: margin, margin-top, margin-right, (margin-left, margin-right), etc.
+  @each $prefix, $directions in $paddingDirectionsMap {
 
-.p3  { padding:        ($SPACING_3) }
-.pt3 { padding-top:    ($SPACING_3) }
-.pr3 { padding-right:  ($SPACING_3) }
-.pb3 { padding-bottom: ($SPACING_3) }
-.pl3 { padding-left:   ($SPACING_3) }
-.py3 { padding-top:    ($SPACING_3); padding-bottom: ($SPACING_3) }
-.px3 { padding-left:   ($SPACING_3); padding-right:  ($SPACING_3) }
+    // Creates a class, such as .m1, .my4, etc;
+    .p#{$prefix}#{$suffix} {
 
-.p4  { padding:        ($SPACING_4) }
-.pt4 { padding-top:    ($SPACING_4) }
-.pr4 { padding-right:  ($SPACING_4) }
-.pb4 { padding-bottom: ($SPACING_4) }
-.pl4 { padding-left:   ($SPACING_4) }
-.py4 { padding-top:    ($SPACING_4); padding-bottom: ($SPACING_4) }
-.px4 { padding-left:   ($SPACING_4); padding-right:  ($SPACING_4) }
+      // Loops over the directions if there are multiple directions.
+      // null: (margin), y: (margin-top, margin-bottom), etc.
+      // @$spacing: utilises the spacing value.
+      @each $direction in $directions {
+        #{$direction}: deep-map-get($spacingMap, $suffix, "fixed") !important;
+        #{$direction}: deep-map-get($spacingMap, $suffix, "variable") !important;
+      }
+    }
+  }
+}
 
-.p5  { padding:        ($SPACING_5) }
-.pt5 { padding-top:    ($SPACING_5) }
-.pr5 { padding-right:  ($SPACING_5) }
-.pb5 { padding-bottom: ($SPACING_5) }
-.pl5 { padding-left:   ($SPACING_5) }
-.py5 { padding-top:    ($SPACING_5); padding-bottom: ($SPACING_5) }
-.px5 { padding-left:   ($SPACING_5); padding-right:  ($SPACING_5) }
+.pl-30 {
+  padding-left: 30%;
+}
+.pr-30 {
+  padding-right: 30%;
+}
+@include media-breakpoint-down('md') {
+  .p-md-down-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.header-padding {
+  padding-top: 188px;
+}

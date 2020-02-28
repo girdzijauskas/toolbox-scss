@@ -2,70 +2,57 @@
   Font utility classes
   ########################################################################### */
 
-
-/*- Font family mixins
+/*- Generating font classes
   --------------------------------------------------------------------------  */
 
-%f-gotham-bold {
-  font-family: $GOTHAM_BOLD;
-}
+@each $class, $font in $fontsMap {
+  .f-#{$class} {
+    font-family: $font;
+  }
+} 
 
-%f-gotham-light {
-  font-family: $GOTHAM_LIGHT;
-}
-
-%f-heading {
-  font-family: $FONT_HEADING;
-}
-
-%f-body {
-  font-family: $FONT_BODY;
-}
-
-
-/*- Font family utilities
-  --------------------------------------------------------------------------  */
-
-.f-gotham-bold {
-  @extend %f-gotham-bold;
-}
-
-.f-gotham-light {
-  @extend %f-gotham-light;
-}
-
-.f-heading {
-  @extend %f-heading;
-}
-
-.f-body {
-  @extend %f-body;
-}
-
-
-/*- Generic font utilities
-  --------------------------------------------------------------------------  */
-
-.bold, strong {
-  font-weight: bold;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.text-decoration-reset {
+.clear-decoration {
   text-decoration: none;
 }
 
-.upper {
-  text-transform: uppercase;
+.clear-transform {
+  text-transform: none !important;
 }
 
-.text-center {
-  text-align: center;
+.lh-1 {
+  line-height: 1;
 }
 
-.text-right {
-  text-align: right;
+.p-tight { 
+  p, li {
+    margin-block-end: 0.2em;
+    margin-block-start: 0.2em;
+    line-height: 1.2;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.quotes {
+  position: relative;
+  &:before {
+    content: open-quote;
+    left: -10px;
+    top: 0;
+    transform: translateY(-30%);
+  }
+  &:after {
+    content: close-quote;
+    right: -10px;
+    bottom: 0;
+    transform: translateY(80%);
+  }
+  &:before, &:after {
+    position: absolute;
+    color: $TANGO;
+    font-size: 72px;
+    font-family: $SWISS_721_BC;
+  }
 }

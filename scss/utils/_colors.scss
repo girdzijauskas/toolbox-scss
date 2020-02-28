@@ -2,80 +2,29 @@
   Color utility classes
   ########################################################################### */
 
-
 /*- Color classes
   --------------------------------------------------------------------------  */
 
-.c-spruce {
-  color: $SPRUCE;
+// Loops over the colorsMap
+// @$name: morning-glory, horizon, romance, etc.
+// @$color_hex: #97D2D4, #598B9F, #E3F2F3, etc.
+@each $name, $color_hex in $colorsMap {
+  .c-#{$name} {
+    color: $color_hex;
+  }
+  .c-bg-#{$name} {
+    background-color: $color_hex;
+  }
 }
 
-.c-stilleto {
-  color: $STILLETO;
+.link-color-light {
+  a {
+    color: $FONT_LIGHT !important;
+  }
 }
 
-.c-dixie {
-  color: $DIXIE;
-}
-
-.c-flash {
-  color: $FLASH;
-}
-
-.c-elm {
-  color: $ELM;
-}
-
-.c-font-light {
-  color: $FONT_LIGHT;
-}
-
-.c-font-dark {
-  color: $FONT_DARK;
-}
-
-.c-amour {
-  color: $AMOUR;
-}
-
-
-/*- Background color classes
-  --------------------------------------------------------------------------  */
-
-.c-bg-spruce {
-  background-color: $SPRUCE;
-}
-
-.c-bg-stilleto {
-  background-color: $STILLETO;
-}
-
-.c-bg-dixie {
-  background-color: $DIXIE;
-}
-
-.c-bg-flash {
-  background-color: $FLASH;
-}
-
-.c-bg-elm {
-  background-color: $ELM;
-}
-
-.c-bg-amour {
-  background-color: $AMOUR;
-}
-
-.c-bg-spruce-light {
-  background-color: lighten($SPRUCE, 20%);
-}
-
-
-/*- Heading color overrides
-  --------------------------------------------------------------------------  */
-
-.c-headings-stilleto {
-  h3, h4, h5, h6 {
-    color: $STILLETO;
+.c-white-container {
+  .container-text {
+    color: $WHITE;
   }
 }

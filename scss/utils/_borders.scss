@@ -2,62 +2,113 @@
   Border utility classes
   ########################################################################### */
 
-/*- Border radii
-  --------------------------------------------------------------------------  */
+.button-border-radius {
+  border-radius: $BUTTON_RADIUS;
+}
 
-.b-r-50p {
+.card-border-radius {
+  border-radius: $BORDER_RADIUS;
+}
+
+.border-radius-med {
+  border-radius: $BORDER_RADIUS_MED;
+}
+
+.b-b-white {
+  border-color: $WHITE;
+  border-width: 1px;
+  border-bottom-style: solid;
+}
+
+.br-50 {
   border-radius: 50%;
-  overflow: hidden;
 }
 
-.b-r-10 {
-  border-radius: 10px;
-}
-
-/*- Border reset
-  --------------------------------------------------------------------------  */
-
-.b-none {
+.border-clear {
   border: none;
 }
 
-
-/*- Border widths
-  --------------------------------------------------------------------------  */
-
-.b-s-5 {
-  border-width: 5px;
+.b-b-dust-storm {
+  border-color: $DUST_STORM;
+  border-width: 1px;
+  border-bottom-style: solid;
 }
 
-.b-s-10 {
-  border-width: 10px;
-}
-
-
-/*- Border colors
-  --------------------------------------------------------------------------  */
-
-.b-c-white {
-  border-color: $PAPER;
-}
-
-.b-c-stilleto {
-  border-color: $STILLETO;
-}
-
-.b-c-spruce {
-  border-color: $SPRUCE;
-}
-
-
-/*- Full border utility classes
---------------------------------------------------------------------------  */
-
-.border-1-stilleto {
-  border-bottom: 1px solid $STILLETO;
-}
-
-.border-2 {
+.b-2-dust-storm {
+  border-color: $DUST_STORM;
   border-width: 2px;
   border-style: solid;
+}
+
+.b-collapse-highlight {
+  border-left-color: $TANGO;
+  border-left-width: 5px;
+  border-left-style: red;
+}
+
+.b-category-links {
+  border-color: $TANGO;
+  border-radius: $BORDER_RADIUS_MED;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.b-list-dust-storm:not(:last-child) {
+  .border-target {
+    border-color: $DUST_STORM;
+    border-width: 1px;
+    border-bottom-style: solid;
+  }
+}
+.b-list-white {
+  li:not(:last-child) {
+    > a {
+      border-color: $DUST_STORM;
+      border-width: 1px;
+      border-bottom-style: solid;
+    }
+  }
+}
+.title-border-to-edge {
+  position: relative;
+
+  &:after, &:before {
+    position: absolute;
+    content: ' ';
+    width: 100vw;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $SMALT_BLUE;
+  }
+  &:after {
+    right: calc(100% + #{$SPACING_3});
+  }
+  &:before {
+    left: calc(100% + #{$SPACING_3});
+  }
+}
+
+.b-b-2-smalt-blue {
+  border-color: $SMALT_BLUE;
+  border-width: 2px;
+  border-bottom-style: solid;
+}
+
+
+.margin-bottom-fix {
+  margin-bottom: -2px;
+}
+
+.b-radius-right-only {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.b-radius-clear {
+  border-radius: 0;
+}
+
+.b-r-white {
+  border-right: 2px solid $WHITE;
 }

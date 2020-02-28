@@ -2,22 +2,30 @@
   Default link styles
   ########################################################################### */
 
-a {
-  color:           inherit; // this is much easier to deal with.
-  text-decoration: inherit; // NOTE:  might be not necessary?
-  font-weight:     inherit;
-  font-family:     inherit;
-  text-transform:  inherit;
-  font-size:       inherit;
-}
-
-/*- Overriding the Classy menu styles
---------------------------------------------------------------------------  */
-
-ul.main-menu {
   a {
-    &:hover, &.is-active {
-      color: $LINK_HOVER_COLOR;
+    color:           inherit; // this is much easier to deal with.
+    text-decoration: inherit; // NOTE:  might be not necessary?
+    font-weight:     inherit;
+    font-family:     inherit;
+    text-transform:  inherit;
+    font-size:       inherit;
+  }
+
+  .tango-links {
+    a {
+      color: $TANGO;
     }
   }
-}
+  
+  /*- Anchor link fix
+    --------------------------------------------------------------------------  */
+  
+  a#main-content {
+    top: -140px;
+    display: block;
+    position: relative;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }

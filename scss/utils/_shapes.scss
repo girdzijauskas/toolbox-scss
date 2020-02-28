@@ -1,61 +1,39 @@
 /*###########################################################################
-  Utility classes to make CSS shapes
+  Shapes / borders / etc.
   ########################################################################### */
 
-
-/*- Triangle extends
-  --------------------------------------------------------------------------  */
-
-%sh-triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
+.shp-orange-dash:not(:last-child) {
+  position: relative;
+  &:after {
+    top: 0;
+    right: -1px;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    content: ' ';
+    background: repeating-linear-gradient(
+      to bottom, 
+      $TANGO 0px,
+      $TANGO 5px, 
+      $TRANSPARENT 5px,
+      $TRANSPARENT 8px,
+    );
+  }
 }
 
-%sh-triangle-up {
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-top-color: transparent;
+.shp-title-line {
+  position: relative;
+  &:after {
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 1px;
+    position: absolute;
+    content: ' ';
+    background: $GRANNY_SMITH;
+  }
 }
 
-%sh-triangle-left {
-  border-top-color: transparent;
-  border-left-color: transparent;
-  border-bottom-color: transparent;
-}
-
-%sh-triangle-right {
-  border-right-color: transparent;
-  border-top-color: transparent;
-  border-bottom-color: transparent;
-}
-
-%sh-triangle-down {
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-}
-
-
-/*- Triangles utils
-  --------------------------------------------------------------------------  */
-
-.sh-triangle {
-  @extend %sh-triangle;
-}
-
-.sh-triangle-up {
-  @extend %sh-triangle-up;
-}
-
-.sh-triangle-left {
-  @extend %sh-triangle-left;
-}
-
-.sh-triangle-right {
-  @extend %sh-triangle-right;
-}
-
-.sh-triangle-down {
-  @extend %sh-triangle-down;
+.sh-square-icon {
+  width: 42px;
 }

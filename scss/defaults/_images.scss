@@ -7,14 +7,48 @@
   --------------------------------------------------------------------------  */
 
 img {
-  max-width:  100%;
-  max-height: inherit; // NOTE:  in what situations is this bad?
-  width:      auto;  // NOTE:  should this ever be used?
-  height:     auto;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  vertical-align: text-bottom; // Fixes the img font size issue.
 }
 
 .img-block {
   img {
     display: block; // This is needed because Drupal!
+  }
+}
+
+
+
+.img-cover {
+  * {
+    height: 100%;
+  }
+
+  &.compat-object-fit {
+    background-size: cover;
+    background-position: center center;
+
+    img {
+      // hide image if object fit is not supported - opacity to 0 for the link area
+      opacity: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+}
+
+svg {
+  width: 100%;
+}
+
+.branding-logo {
+  @include media-breakpoint-down('md') {
+      max-width: 185px !important;
   }
 }

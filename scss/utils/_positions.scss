@@ -1,0 +1,78 @@
+/*###########################################################################
+  Positioning utility classes
+  ########################################################################### */
+
+.center {
+  transform: translate(-50%, -50%);
+  top:       50%;
+  left:      50%;
+  position:  absolute;
+}
+
+.center-vertical {
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.center-horizontal {
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.top-10 {
+  top: 10px;
+}
+
+.right-10 {
+  right: 10px;
+}
+
+.of-visible {
+  overflow: visible;
+}
+
+.of-hidden {
+  overflow: hidden;
+}
+
+.of-y-scroll {
+  overflow-y: scroll;
+}
+
+.tns-of-visible {
+  .tns-ovh {
+    overflow: visible;
+  }
+}
+
+// Date position on card
+.card-date {
+  top: -83px;
+}
+
+
+.wish-list-pos {
+  right: 2rem;
+  top: calc(100% + 1rem);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 10px;
+}
+
+.align-middle {
+  vertical-align: middle;
+}

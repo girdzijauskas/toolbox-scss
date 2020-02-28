@@ -1,17 +1,31 @@
 /*###########################################################################
-  Font setup
+  Fonts setup
   ########################################################################### */
-
 
 /*- Setting the font variables
   --------------------------------------------------------------------------  */
 
-$GOTHAM_BOLD:  'Gotham-Bold';
-$GOTHAM_LIGHT: 'Gotham-Light';
+$SWISS_721_BC:    "Swiss 721 Bold Condensed BT";
+$SWISS_721_LC:    "Swiss 721 Light Condensed BT";
+$GEORGIA:         Georgia;
 
 
 /*- Assigning Heading and Body fonts
   --------------------------------------------------------------------------  */
 
-$FONT_HEADING: $GOTHAM_BOLD;
-$FONT_BODY:    $GOTHAM_LIGHT;
+$FONT_HEADING:  $SWISS_721_BC;
+$FONT_INPUT:    $SWISS_721_LC;
+$FONT_BODY:     $GEORGIA;
+
+
+
+/*- fontsMap
+  --------------------------------------------------------------------------  */
+
+$fontsMap: (
+  heading:        $FONT_HEADING,
+  input:          $FONT_INPUT,
+  body:           $FONT_BODY,
+  swiss-721-bc:   $SWISS_721_BC,
+  swiss-721-lc:   $SWISS_721_LC,
+);

@@ -2,64 +2,68 @@
   Margin utility classes
   ########################################################################### */
 
-
-/*- Classes
+/*- Creates all of the margin spacing classes
   --------------------------------------------------------------------------  */
 
-.m0  { margin:        0 }
-.mt0 { margin-top:    0 !important }
-.mr0 { margin-right:  0 }
-.mb0 { margin-bottom: 0 }
-.ml0 { margin-left:   0 }
-.mx0 { margin-left:   0; margin-right:  0 }
-.my0 { margin-top:    0; margin-bottom: 0 }
-
-.m1  { margin:        ($SPACING_1) }
-.mt1 { margin-top:    ($SPACING_1) }
-.mr1 { margin-right:  ($SPACING_1) }
-.mb1 { margin-bottom: ($SPACING_1) }
-.ml1 { margin-left:   ($SPACING_1) }
-.mx1 { margin-left:   ($SPACING_1); margin-right:  ($SPACING_1) }
-.my1 { margin-top:    ($SPACING_1); margin-bottom: ($SPACING_1) }
-
-.m2  { margin:        ($SPACING_2) }
-.mt2 { margin-top:    ($SPACING_2) }
-.mr2 { margin-right:  ($SPACING_2) }
-.mb2 { margin-bottom: ($SPACING_2) }
-.ml2 { margin-left:   ($SPACING_2) }
-.mx2 { margin-left:   ($SPACING_2); margin-right:  ($SPACING_2) }
-.my2 { margin-top:    ($SPACING_2); margin-bottom: ($SPACING_2) }
-
-.m3  { margin:        ($SPACING_3) }
-.mt3 { margin-top:    ($SPACING_3) }
-.mr3 { margin-right:  ($SPACING_3) }
-.mb3 { margin-bottom: ($SPACING_3) }
-.ml3 { margin-left:   ($SPACING_3) }
-.mx3 { margin-left:   ($SPACING_3); margin-right:  ($SPACING_3) }
-.my3 { margin-top:    ($SPACING_3); margin-bottom: ($SPACING_3) }
-
-.m4  { margin:        ($SPACING_4) }
-.mt4 { margin-top:    ($SPACING_4) }
-.mr4 { margin-right:  ($SPACING_4) }
-.mb4 { margin-bottom: ($SPACING_4) }
-.ml4 { margin-left:   ($SPACING_4) }
-.mx4 { margin-left:   ($SPACING_4); margin-right:  ($SPACING_4) }
-.my4 { margin-top:    ($SPACING_4); margin-bottom: ($SPACING_4) }
-
-.m5  { margin:        ($SPACING_5) }
-.mt5 { margin-top:    ($SPACING_5) }
-.mr5 { margin-right:  ($SPACING_5) }
-.mb5 { margin-bottom: ($SPACING_5) }
-.ml5 { margin-left:   ($SPACING_5) }
-.mx5 { margin-left:   ($SPACING_5); margin-right:  ($SPACING_5) }
-.my5 { margin-top:    ($SPACING_5); margin-bottom: ($SPACING_5) }
-
-.ml-auto { margin-left: auto }
-.mr-auto { margin-right: auto }
-.mx-auto { margin-left: auto !important; margin-right: auto !important; }
+// Loops over the spacingMap, combining the spacings with the directions
+// @$suffix: 0, 1, 2, 3, 4, 5
+// @$spacing: 0, 0.5em, 1em, 2em, 4em, etc.
+@each $suffix, $spacing in $spacingMap {
 
 
-/*- Bootstrap negative margins
---------------------------------------------------------------------------  */
+  // Loops over the directionsMap using their prefix and the directions
+  // @$prefix: null, t, r, b, l, x, y
+  // @$directions: margin, margin-top, margin-right, (margin-left, margin-right), etc.
+  @each $prefix, $directions in $marginDirectionsMap {
 
-.mxnbs { margin-left: -($grid-gutter-width / 2); margin-right: -($grid-gutter-width / 2);}
+    // Creates a class, such as .m1, .my4, etc;
+    .m#{$prefix}#{$suffix} {
+
+      // Loops over the directions if there are multiple directions.
+      // null: (margin), y: (margin-top, margin-bottom), etc.
+      // @$spacing: utilises the spacing value.
+      @each $direction in $directions {
+        #{$direction}: deep-map-get($spacingMap, $suffix, "fixed") !important;
+        #{$direction}: deep-map-get($spacingMap, $suffix, "variable") !important;
+      }
+    }
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mx-md-auto {
+  @include media-breakpoint-down('md') {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+.mxn3 {
+  margin-right: -$SPACING_3 * $fixedFactor;
+  margin-left: calc(-#{$SPACING_3} * var(--spacing-factor));
+  margin-right: -$SPACING_3 * $fixedFactor;
+  margin-left: calc(-#{$SPACING_3} * var(--spacing-factor));
+}
+
+/*
+* This class is used to 'pull' the first and last column out towards the edges of the row. 
+* We need this because using .row with the tiny slider (our js slider library) breaks
+* the slider items.
+*/
+@include media-breakpoint-up('md') {
+  .mxn-md {
+    margin-right: -$SPACING_3 * $fixedFactor;
+    margin-right: calc(-#{$SPACING_3} * var(--spacing-factor));
+    margin-left: -$SPACING_3 * $fixedFactor;
+    margin-left: calc(-#{$SPACING_3} * var(--spacing-factor));
+  }
+}

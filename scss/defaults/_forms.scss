@@ -1,30 +1,23 @@
 /*###########################################################################
-  All styles for webforms / buttons / input fields
+  Default form styles
   ########################################################################### */
 
-/*- Input fields
-  --------------------------------------------------------------------------  */
-
-input {
-  min-height: 40px; // NOTE: If you wish to increase the padding of any form
-  // element, it is generally better to use the 'min-height' property instead of
-  // using padding - there is an IE bug that when padding is applied to input
-  // elemenets they force the placeholder / typed text to disappear from view.
-  padding-left: 10px;
-
-  // Resetting the border styles
+input:not(.button), textarea {
+  background-color: $WHITE;
   border: none;
-  color: $FONT_DARK; // The text on the input fields will generally be dark -
-  // the most common exclusion to this is the Submit button, which should be
-  // overriden individually.
-
-  max-width: 100%;
-}
-
-input.button {
-  color: $FONT_LIGHT;
-}
-
-.form-tel {
+  text-transform: uppercase;
+  @include responsive-typography('h5');
+  border-radius: $BUTTON_RADIUS;
   width: 100%;
+  font-family: $FONT_INPUT;
+  border: 1.5px $BLACK solid;
+  margin: 0;
+}
+
+input, textarea {
+  padding: $SPACING_2;
+}
+
+input.error  {
+  border: 1.5px $TANGO solid;
 }

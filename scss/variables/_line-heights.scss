@@ -1,11 +1,7 @@
 /*###########################################################################
-  General utility classes
+  Line height variables
   ########################################################################### */
 
-
-.object-cover {
-  img {
-    object-fit: cover;
-    min-height: 100%;
-  }
-}
+$DEFAULT_LINE_HEIGHT: 1.2em;
+$LINE_HEIGHT_LARGE:   1.65em;
+$LINE_HEIGHT_BODY:    2.8rem;

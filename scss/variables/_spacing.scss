@@ -1,13 +1,103 @@
 /*###########################################################################
-  The spacing values used for margins / padding / overflows
+  The spacing values used for margin / padding / overflows
   ########################################################################### */
 
-/*- Spacing variables
+
+$SPACING_0: 0;
+$SPACING_1: 0.6rem;
+$SPACING_2: 1.2rem;
+$SPACING_3: 2.5rem;
+$SPACING_4: 5rem;
+$SPACING_5: 10rem;
+$SPACING_6: 20rem;
+
+$BOOTSTRAP_GUTTER: 2rem;
+$BOOTSTRAP_DOUBLE: 4rem;
+
+
+/*- Responsive Spacing factors
   --------------------------------------------------------------------------  */
 
-$SPACING_1: 0.3rem;
-$SPACING_2: 1rem;
-$SPACING_3: 2rem;
-$SPACING_4: 4rem;
-$SPACING_5: 5rem;
-$SPACING_8: 8rem;
+:root {
+  @include media-breakpoint-up(xs) {
+    --spacing-factor: 0.7; // Spacing is half the root value.
+  }
+  @include media-breakpoint-up(sm) {
+    --spacing-factor: 0.7;
+  }
+  @include media-breakpoint-up(md) {
+    --spacing-factor: 0.8;
+  }
+  @include media-breakpoint-up(lg) {
+    --spacing-factor: 0.9;
+  }
+  @include media-breakpoint-up(xl) {
+    --spacing-factor: 1; // Spacing is not changed from the root value
+  }
+}
+
+
+/*- Fixed Spacing factor - this is for older browsers that do not support
+    CSS variables
+  --------------------------------------------------------------------------  */
+
+$fixedFactor: 0.8;
+
+
+
+$spacingMap: (
+  0: (
+    fixed:    $SPACING_0 * $fixedFactor,
+    variable: calc(#{$SPACING_0} * var(--spacing-factor)),
+  ),
+  1: (
+    fixed:    $SPACING_1 * $fixedFactor,
+    variable: calc(#{$SPACING_1} * var(--spacing-factor)),
+  ),
+  2: (
+    fixed:    $SPACING_2 * $fixedFactor,
+    variable: calc(#{$SPACING_2} * var(--spacing-factor)),
+  ),
+  3: (
+    fixed:    $SPACING_3 * $fixedFactor,
+    variable: calc(#{$SPACING_3} * var(--spacing-factor)),
+    ),
+  4: (
+    fixed:    $SPACING_4 * $fixedFactor,
+    variable: calc(#{$SPACING_4} * var(--spacing-factor)),
+    ),
+  5: (  
+    fixed:    $SPACING_5 * $fixedFactor,
+    variable: calc(#{$SPACING_5} * var(--spacing-factor)),
+    ),
+  6: (  
+    fixed:    $SPACING_6 * $fixedFactor,
+    variable: calc(#{$SPACING_6} * var(--spacing-factor)),
+  ),
+  bd: (  
+    fixed:    $BOOTSTRAP_DOUBLE * $fixedFactor,
+    variable: calc(#{$BOOTSTRAP_DOUBLE} * var(--spacing-factor)),
+    )
+);
+
+
+$marginDirectionsMap: (
+  null: (margin),
+  t:    (margin-top),
+  r:    (margin-right),
+  b:    (margin-bottom),
+  l:    (margin-left),
+  x:    (margin-left, margin-right),
+  y:    (margin-top, margin-bottom),
+);
+
+$paddingDirectionsMap: (
+  null: (padding),
+  t:    (padding-top),
+  r:    (padding-right),
+  b:    (padding-bottom),
+  l:    (padding-left),
+  x:    (padding-left, padding-right),
+  y:    (padding-top, padding-bottom),
+);
+

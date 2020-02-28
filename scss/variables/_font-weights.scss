@@ -1,0 +1,29 @@
+/*###########################################################################
+  Font-weight variables to assign numeric values to words
+  ########################################################################### */
+
+
+$FW_THIN:         100;
+$FW_EXTRA_LIGHT:  200;
+$FW_LIGHT:        300;
+$FW_NORMAL:       400;
+$FW_MEDIUM:       500;
+$FW_SEMI_BOLD:    600;
+$FW_BOLD:         700;
+$FW_EXTRA_BOLD:   800;
+$FW_BLACK:        900;
+
+
+$fontWeightsMap: (
+  thin:         $FW_THIN,
+  extra-light:  $FW_EXTRA_LIGHT,
+  light:        $FW_LIGHT,
+  normal:       $FW_NORMAL,
+  medium:       $FW_MEDIUM,
+  semi-bold:    $FW_SEMI_BOLD,
+  bold:         $FW_BOLD,
+  extra-bold:   $FW_EXTRA_BOLD,
+  black:        $FW_BLACK
+);
+  
+  

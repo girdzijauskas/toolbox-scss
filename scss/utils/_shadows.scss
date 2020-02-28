@@ -1,10 +1,11 @@
 /*###########################################################################
-  The utility classes for background images
+  Shadow utility classes
   ########################################################################### */
 
+.sh-white {
+  box-shadow: 5px 2px 5px white
+}
 
-.bg-cover-central {
-  background-size:     cover;
-  background-position: 50% 50%;
-  background-repeat:   no-repeat;
+.sh-dark {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 }

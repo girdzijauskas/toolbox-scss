@@ -1,0 +1,62 @@
+/*###########################################################################
+  Transition utilities
+  ########################################################################### */
+
+.tr-quick {
+  transition-duration: $TRANSITION_DURATION_QUICK;
+  transition-timing-function: $DEFAULT_TIMING_FUNCTION;
+}
+
+.tr-short {
+  transition-duration: $TRANSITION_DURATION_SHORT;
+  transition-timing-function: $DEFAULT_TIMING_FUNCTION;
+}
+
+.tr-long {
+  transition-duration: $TRANSITION_DURATION_LONG;
+  transition-timing-function: $DEFAULT_TIMING_FUNCTION;
+}
+
+.tr-width {
+  transition-property: width;
+}
+
+.tr-padding {
+  transition-property: padding;
+}
+
+.tr-main-menu {
+  transition-property: padding, box-shadow;
+}
+
+.tr-main-menu-item {
+  transition-property: color, font-size;
+}
+
+.tr-font-size {
+  transition-property: font-size;
+}
+
+.tr-opacity {
+  transition-property: opacity;
+}
+
+.tr-callus {
+  transition-property: opacity, max-height;
+}
+
+.tr-collapse {
+  transition-property: border-width, color;
+}
+
+.tr-colors {
+  transition-property: background-color, color;
+}
+
+.tr-margins {
+  transition-property: margin-right, margin-left, margin-top, margin-bottom;
+}
+
+tr-padding {
+  transition-property: padding-right, padding-left, padding-top, padding-bottom;
+}

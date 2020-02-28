@@ -2,29 +2,66 @@
   Color variables used across the site
   ########################################################################### */
 
-/*- Main Colors
+/*- Main colors
   --------------------------------------------------------------------------  */
 
-$SPRUCE:      #1b3241; // Main Prettys blue
-$STILLETO:    #a7002f; // Main Prettys red
-$DIXIE:       #e39a1e; // Specialist yellow
-$FLASH:       //#F4F4F6; // Background color for some sections. can be #ECECEC too.
-              #ECECEC;
-$ELM:         #1a7783; // Individuals blue-grey
-$SPRING:      #548c62; // News / events
-$LOCUST:      #abaf8e; // Articles / publications
-$AMOUR:       #f7e8ea; // Blog item background color
-$BLACK_PEARL: #1f252c; // Prettys grey / dark font color
-$PAPER:       #ffffff; // White / light font color
-$LILY_WHITE:  #393b41; // Darker background color
+$TANGO:         #F36C20; // Main Champions-Speakers color
+$MAHOGANY:      #BC4400; // Darker Primary color
+$ROMANCE:       #FEFEFE; // Font color in the footer
+$WHITE:         #F9F9F9;
+$BLACK:         #1D1D1B;
+  
+$DUST_STORM:    #DADADA; // Search bar input background
+$WILD_SAND:     #F2F2F2; // Background color to differentiate sections
+$SMALT_BLUE:    #465563; // Fainter text color.
+$DARK_JUNGLE:   #1D1D1B; // Footer background
+$PELOROUS:      #1C80A7; // Blue button background
+$GRANNY_SMITH:  #7F8C8D;
+$METALLIC_GOLD: #d4b038;
 
-
+$TRANSPARENT:   rgba($WHITE, 0); // Taking the white color and giving it 0 alpha.
 
 
 /*- Font color settings
   --------------------------------------------------------------------------  */
 
-$FONT_LIGHT:       $PAPER;
-$FONT_DARK:        $BLACK_PEARL;
-$LINK_COLOR:       $SPRUCE;
-$LINK_HOVER_COLOR: $STILLETO;
+$FONT_LIGHT:    $WHITE;
+$FONT_DARK:     $BLACK;
+
+
+/*- Generally you will want both variables and a map of items that you can loop
+  --------------------------------------------------------------------------  */
+
+// NOTE:  you could improve this by adding shades of colors within here:
+/*
+  $colorsMap: (
+    morning-glory: (
+      base:   $MORNING_GLORY,
+      tint:   lighten($MORNING_GLORY, 20%),
+      shade:  darken($MORNING_GLORY, 20%),
+    ),
+    horizon: (...),
+    aqua-squeeze: (...),
+    etc...
+  )
+*/
+
+$colorsMap: (
+  tango:        $TANGO,
+  mahogany:     $MAHOGANY,
+  romance:      $ROMANCE,
+  white:        $WHITE,
+  black:        $BLACK,
+
+  dust-storm:   $DUST_STORM,
+  wild-sand:    $WILD_SAND,
+  smalt-blue:   $SMALT_BLUE,
+  dark-jungle:  $DARK_JUNGLE,
+  pelorous:     $PELOROUS,
+  metallic-gold:$METALLIC_GOLD,
+
+  transparent:  $TRANSPARENT,
+
+  font-light:   $FONT_LIGHT,
+  font-dark:    $FONT_DARK,
+);

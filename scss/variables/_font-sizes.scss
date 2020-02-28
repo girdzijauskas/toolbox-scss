@@ -1,56 +1,116 @@
 /*###########################################################################
-  Font-size variables
+  Font size variables
   ########################################################################### */
 
+$FS_BASE:           10px;
+ 
+$FS_HUGE_DESKTOP:   7.2;
+$FS_HUGE_MOBILE:    7.2;
+$FW_HUGE:           $FW_BOLD;
 
-// QUESTION: How do you make these fully responsive?
+$FS_H1_DESKTOP:     3.6;
+$FS_H1_MOBILE:      2.6;
+$FW_H1:             $FW_BOLD;
 
-// ANSWER: using the fluid typography calc() function - currently using this
-// only on H1 tags. That is why you see a $REM variable with px, a unitless
-// version, and a 'half the REM' font size variable - $FS_H1_HALF. Since
-// $FS_H1_HALF is 2, that means the font size is 4rem (twice), which results in
-// 64px; The media query combined with the calc() function will allow the H1
-// font size to flow between 2rem and 4rem (32px and 64px, for a 16px root font
-// size)
+$FS_H2_DESKTOP:     2.6;
+$FS_H2_MOBILE:      2.6;
+$FW_H2:             $FW_BOLD;
 
-// UPDATE: also using this H2 tags as well, but I'm trying to scale them from
-// 1.2rem -> 2rem instead of FONT_SIZE / 2 -> FONT_SIZE. Might be a more complex
-// calc function...
+$FS_H3_DESKTOP:     2.2;
+$FS_H3_MOBILE:      2.2;
+$FW_H3:             $FW_NORMAL;
 
-// For the actual usage of these variables, look @ /defaults/_fonts.scss
+$FS_H4_DESKTOP:     1.8;
+$FS_H4_MOBILE:      1.8;
+$FW_H4:             $FW_NORMAL;
+
+$FS_H5_DESKTOP:     1.4;
+$FS_H5_MOBILE:      1.4;
+$FW_H5:             $FW_NORMAL;
+
+$FS_BODY_DESKTOP:   1.7;
+$FS_BODY_MOBILE:    1.7;
+$FW_BODY:           $FW_NORMAL;
+
+$FS_MAIN_MENU_DESKTOP:  2.1;
+$FS_MAIN_MENU_MOBILE:   1.4;
+$FW_MAIN_MENU:         $FW_NORMAL;
+
+$FS_CATEGORIES_MENU_DESKTOP:  1.65;
+$FS_CATEGORIES_MENU_MOBILE:   1.5;
+$FW_CATEGORIES_MENU:          $FW_NORMAL;
+
+$FS_SMALL_DESKTOP:  1.2;
+$FS_SMALL_MOBILE:   1.2;
+$FW_SMALL:         $FW_NORMAL;
+
+$FS_TABS_DESKTOP:  1.8;
+$FS_TABS_MOBILE:   2.2;
+$FW_TABS:          $FW_NORMAL;
 
 
-/*- Font sizes
+/*- Map that we can loop over to generate our classes.
   --------------------------------------------------------------------------  */
 
-$FS_BASE:      16px;
-$ulFS_BASE:    16;
-
-$FS_H1_HALF: 2;
-$FS_H1:      2 * $FS_H1_HALF * $FS_BASE;
-$FS_H2_SCALING: 1.2;
-$FS_H2_HALF: 1;
-$FS_H2:      2 * $FS_H2_HALF * $FS_BASE;
-$FS_H3:      1.1 * $FS_BASE;
-$FS_H4:      1.5 * $FS_BASE;
-$FS_H5:      1.25 * $FS_BASE;
-$FS_H6:      1 * $FS_BASE;
-$FS_P:       1 * $FS_BASE;
-$FS_BODY:    1 * $FS_BASE;
-$FS_SMALL:   0.8 * $FS_BASE;
-
-
-/*- Line heights
-  --------------------------------------------------------------------------  */
-
-$LH_BASE: 1.4;
-$LH_MED:  1.6;
-$LH_LG:   1.75;
-
-
-/*- Letter Spacings
-  --------------------------------------------------------------------------  */
-
-$LS_BASE: 0.01em;
-$LS_MED:  0.02em;
-$LS_LG:   0.03em;
+$fontSizesMap: (
+  huge:   (
+    desktop:  $FS_HUGE_DESKTOP,
+    mobile:   $FS_HUGE_MOBILE,
+    weight:   $FW_HUGE,
+  ),
+  h1:   (
+    desktop:  $FS_H1_DESKTOP,
+    mobile:   $FS_H1_MOBILE,
+    weight:   $FW_H1,
+  ),
+  h2:   (
+    desktop:  $FS_H2_DESKTOP,
+    mobile:   $FS_H2_MOBILE,
+    weight:   $FW_H2,
+  ),
+  h3:   (
+    desktop:  $FS_H3_DESKTOP,
+    mobile:   $FS_H3_MOBILE,
+    weight:   $FW_H3,
+  ),
+  h4:   (
+    desktop:  $FS_H4_DESKTOP,
+    mobile:   $FS_H4_MOBILE,
+    weight:   $FW_H4,
+  ),
+  h5:   (
+    desktop:  $FS_H5_DESKTOP,
+    mobile:   $FS_H5_MOBILE,
+    weight:   $FW_H5,
+  ),
+  main-menu:   (
+    desktop:  $FS_MAIN_MENU_DESKTOP,
+    mobile:   $FS_MAIN_MENU_MOBILE,
+    weight:   $FW_MAIN_MENU,
+  ),
+  categories-menu:   (
+    desktop:  $FS_CATEGORIES_MENU_DESKTOP,
+    mobile:   $FS_CATEGORIES_MENU_MOBILE,
+    weight:   $FW_CATEGORIES_MENU,
+  ),
+  body:   (
+    desktop:  $FS_BODY_DESKTOP,
+    mobile:   $FS_BODY_MOBILE,
+    weight:   $FW_BODY,
+  ),
+  tabs:   (
+    desktop:  $FS_TABS_DESKTOP,
+    mobile:   $FS_TABS_MOBILE,
+    weight:   $FW_TABS,
+  ),
+  small:   (
+    desktop:  $FS_SMALL_DESKTOP,
+    mobile:   $FS_SMALL_MOBILE,
+    weight:   $FW_SMALL
+  ),
+  zero: (
+    desktop:  0,
+    mobile:   0,
+    weight:   $FW_BODY,
+  ),
+);

@@ -2,74 +2,8 @@
   Font size utility classes
   ########################################################################### */
 
-
-/*- Static font size classes
-  --------------------------------------------------------------------------  */
-
-.fs-h1 {
-  @extend %fs-h1;
-}
-
-.fs-h2 {
-  font-size: $FS_H2;
-}
-
-.fs-h3 {
-  font-size: $FS_H3;
-}
-
-.fs-h4 {
-  font-size: $FS_H4;
-}
-
-.fs-h5 {
-  font-size: $FS_H5;
-}
-
-.fs-h6 {
-  font-size: $FS_H6;
-}
-
-.fs-p {
-  font-size: $FS_P;
-}
-
-.fs-body {
-  font-size: $FS_BODY;
-}
-
-.fs-small {
-  font-size: $FS_SMALL;
-}
-
-
-/*- Line height utility classes
-  --------------------------------------------------------------------------  */
-
-.lh-base {
-  line-height: $LH_BASE;
-}
-
-.lh-med {
-  line-height: $LH_MED;
-}
-
-.lh-lg {
-  line-height: $LH_LG;
-}
-
-
-/*- Letter spacing utility classes
-  --------------------------------------------------------------------------  */
-
-.ls-base {
-  letter-spacing: $LS_BASE;
-}
-
-.ls-med {
-  letter-spacing: $LS_MED;
-}
-
-.ls-lg {
-  letter-spacing: $LS_LG;
+@each $prefix, $value in $fontSizesMap {
+  .fs-#{$prefix} {
+    @include responsive-typography($prefix);
+  }
 }

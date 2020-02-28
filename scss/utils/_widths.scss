@@ -1,27 +1,65 @@
 /*###########################################################################
-  Max-width utility classes
+  Width utility classes
   ########################################################################### */
 
-.mw-300 {
-  max-width:    300px;
-  margin-left:  auto;
-  margin-right: auto;
+
+// These classes should be converted to containers... what else do they need to
+// include? Responsive gutters?
+
+$widthsMap: (
+  60 :    60px,
+  120:   120px,
+  250:   250px,
+  440:   440px,
+  300:   300px,
+  350:   350px,
+  380:   380px,
+  600:   600px,
+  700:   700px,
+  720:   720px,
+  850:   850px,
+  1000:  1000px,
+  1170:  1170px,
+);
+
+$CONTAINER_GUTTER: $SPACING_3;
+
+@each $prefix, $value in $widthsMap {
+  .mw-#{$prefix} {
+    max-width: calc(#{$value} + 2 * #{$CONTAINER_GUTTER});
+    padding-right: $CONTAINER_GUTTER * $fixedFactor;
+    padding-right: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+    padding-left: $CONTAINER_GUTTER * $fixedFactor;
+    padding-left: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+  }
 }
 
-.mw-350 {
-  max-width:    350px;
-  margin-left:  auto;
-  margin-right: auto;
+@each $prefix, $value in $widthsMap {
+  .mwc-#{$prefix} {
+    max-width: #{$value};
+  }
 }
 
-.mw-700 {
-  max-width:    700px;
-  margin-left:  auto;
-  margin-right: auto;
+.w-100 {
+  width: 100%;
 }
 
-.mw-850 {
-  max-width:    850px;
-  margin-left:  auto;
-  margin-right: auto;
+.mw-100 {
+  max-width: 100%;
+}
+
+// History specific
+.bleed-to-edge {
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+  padding-right: $CONTAINER_GUTTER * $fixedFactor;
+  padding-right: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+  padding-left: $CONTAINER_GUTTER * $fixedFactor;
+  padding-left: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+}
+
+.mw-responsive-menu {
+  max-width: 287px;
+  width: 100%;
 }

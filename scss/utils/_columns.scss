@@ -1,0 +1,29 @@
+/*###########################################################################
+  Custom columns
+  ########################################################################### */
+
+$FIFTH: 20%;
+
+$customColumnsMap: (
+  fifth:    $FIFTH,
+);
+
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+  @each $name, $fraction in $customColumnsMap {
+    .col#{$infix}-#{$name} {
+      @extend %grid-column;
+    }
+  }
+
+  @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+    @each $name, $fraction in $customColumnsMap {
+      .col#{$infix}-#{$name} {
+        flex: 0 0 $fraction;
+        max-width: $fraction;
+      }
+    }
+  }
+}

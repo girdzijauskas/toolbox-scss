@@ -1,76 +1,45 @@
 /*###########################################################################
-  The default font styles
+  The default font setup for Champions Speakers
   ########################################################################### */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: $FONT_HEADING;
-}
-
-
-// NOTE:  the best practice is to apply your default <p> tag font (the main body
-// font) on the <body> tag, which then allows you to override all elements
-// easily with classes. Most of the time Drupal provides you with an ability
-// to add classes to fields, which are <div> tags, but do not contain actual
-// content. So if you were to apply a font to the <li>, <p>, etc, tags, you will
-// struggle to apply different fonts to them using classes that are on parent
-// elements, at least not with combined specific selectors. LEARNT: THE best way
-// by far to deal with this is to only apply the default font to the body tag,
-// allow it to cascade down to everything, then override the font choice with a
-// class. Seems obvious, but understanding exactly why and how it works is
-// helpful once you realise how CSS works.. (they're called 'CASCADING' style
-// sheets for a reason).
-
 html {
-  font-size: $FS_BASE;
+  font-size:    $FS_BASE;
+  font-family:  $FONT_BODY;
+  color:        $FONT_DARK;
 }
 
-body {
-  font-family:    $FONT_BODY;
-  font-size:      $FS_BASE;
-  line-height:    $LH_BASE;
-  letter-spacing: $LS_BASE;
-  color:          $FONT_DARK;
+.upper, h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
 }
 
-
-// Using the Fluid Typography equation to create a font size calculation that
-// flows from 2rem -> 4rem (32px -> 64px), on H1 tags.
-// This change happens through screen sizes of 300px -> 1200px
-// @see the _font-sizes.scss partial which contains all the variables and
-// also https://css-tricks.com/snippets/css/fluid-typography/ for a brief
-// explanation.
-
-%fs-h1 {
-  font-size: $FS_H1;
-  @media screen and (max-width: 1200px) {
-    font-size: calc(#{$FS_H1_HALF} * #{$FS_BASE} + (#{$FS_H1_HALF} * #{$ulFS_BASE}) * (100vw - 300px) / 900);
-  }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family:  $FONT_HEADING;
 }
 
+// FIXME: this should be turned into a loop
 h1 {
-  @extend %fs-h1;
+  @include responsive-typography("h1");
 }
 
-// Also applying Fluid Typography to H2 tags.
 h2 {
-  font-size: $FS_H2;
-  @media screen and (max-width: 1200px) {
-    font-size: calc(#{$FS_H2_SCALING} * #{$FS_BASE} + (#{$FS_H2_SCALING} * #{$ulFS_BASE}) * (100vw - 300px) / 900);
-  }
+  @include responsive-typography("h2");
 }
 
 h3 {
-  font-size: $FS_H3;
+  @include responsive-typography("h3");
 }
 
-h4 {
-  font-size: $FS_H4;
+body {
+  @include responsive-typography("body");
 }
 
-h5 {
-  font-size: $FS_H5;
+h2 {
+  margin-top: deep-map-get($spacingMap, 3, "fixed");
+  margin-top: deep-map-get($spacingMap, 3, "variable");
+  margin-bottom: deep-map-get($spacingMap, 2, "fixed");
+  margin-bottom: deep-map-get($spacingMap, 2, "variable");
 }
 
-h6 {
-  font-size: $FS_H6;
+p {
+  line-height: 2.8rem;
 }

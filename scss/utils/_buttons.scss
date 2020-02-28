@@ -1,0 +1,59 @@
+/*###########################################################################
+  Button styles
+  ########################################################################### */
+
+
+// Default orange button styles, including resets
+.button, .link-button a {
+  border-radius: $BUTTON_RADIUS;
+  font-family: $FONT_HEADING;
+  text-transform: uppercase;
+  color: $WHITE;
+  border-width: 0;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+  -webkit-appearance: unset;
+}
+
+.button--tango, .link-button--tango a {
+  background-color: $TANGO;
+}
+
+.button--blue, .link-button--blue a {
+  background-color: $PELOROUS;
+}
+
+.button--big, .link-button--big a {
+  padding-top: $SPACING_2;
+  padding-bottom: $SPACING_2;
+  padding-left: $SPACING_3;
+  padding-right: $SPACING_3;
+  @include responsive-typography('h4');
+}
+
+.button--small, .link-button--small a {
+  padding-left: $SPACING_3;
+  padding-right: $SPACING_3;
+  padding-bottom: $SPACING_1;
+  padding-top: $SPACING_1;
+  @include responsive-typography('h4');
+}
+
+.tr-button {
+  transition-duration: $TRANSITION_DURATION_SHORT;
+  transition-timing-function: $DEFAULT_TIMING_FUNCTION;
+  transition-property: padding, font-size, margin;
+}
+
+@include media-breakpoint-down('sm') {
+  .button-clear-mobile {
+    padding-left: $SPACING_3;
+    padding-right: $SPACING_3;
+    padding-bottom: $SPACING_1;
+    padding-top: $SPACING_1;
+    @include responsive-typography('h4');
+    box-shadow: none;;
+  }
+}

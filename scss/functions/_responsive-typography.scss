@@ -1,0 +1,21 @@
+// A function to generate responsive typography from the fonts map.
+
+@mixin responsive-typography ($prefix) {
+
+  $START:               380;
+  $END:                 1200;
+  
+  $DESKTOP_FONT_SIZE:   deep-map-get($fontSizesMap, $prefix, "desktop");
+  $MOBILE_FONT_SIZE:    deep-map-get($fontSizesMap, $prefix, "mobile");
+  $FONT_WEIGHT:         deep-map-get($fontSizesMap, $prefix, "weight");
+  $DIFFERENCE:          $DESKTOP_FONT_SIZE - $MOBILE_FONT_SIZE;
+
+  font-weight: $FONT_WEIGHT;
+  font-size: #{$MOBILE_FONT_SIZE+rem};
+  @media screen and (min-width: #{$START}px) {
+    font-size: calc(#{$MOBILE_FONT_SIZE*$FS_BASE} + #{$DIFFERENCE*10}  * (100vw - #{$START}px) / (#{$END} - #{$START}));
+  }
+  @media screen and (min-width: #{$END}px) {
+    font-size: #{$DESKTOP_FONT_SIZE+rem};
+  }
+}
