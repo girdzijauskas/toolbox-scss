@@ -17,20 +17,21 @@ as grid and some utilities.
 
 ## Usage
 
-The usage of framework can be summarised in this order:
+The usage of the framework can be summarised in this order:
 
-1. Identify the design system of your front-end - color palettes, text styles 
+
+1a. Identify the individual elements of your front-end - color palettes, text styles 
 (font families, sizes, weights), spacing, borders and any other re-usable
 patterns, such as transitions, and capture them in SASS variables. Examples of
 this can be found in the /variables folder.
 
-2. Build SASS arrays of those variables, then use SASS loops to generate classes
-to create the toolbox of classes.
+1b. Identify the default styles for your design system. Good defaults to cover are
+things like text styles (h1, h2, ...), form and input elements, buttons, links,
+etc. 
 
-3. Use the classes in your HTML to build a consistent style for the site and 
-make it easy to quickly extend your site with a consistent design system.
+2. Apply your default styles using HTML elements (form, input, button, a, h1, ...), 
+and generate classes that can apply the same styles. (For example, a .button
+class that can style a link or another element in the fashion of a button.) 
 
-
-
-
+3. Generate utility classes for your color palettes and font-sizes.
 
