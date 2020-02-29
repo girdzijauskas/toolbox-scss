@@ -1,12 +1,9 @@
 /*###########################################################################
-  Main SASS file of the Champions Speakers Drupal 8 Theme
+  Main toolbox sass file
   ########################################################################### */
 
-// TODO: colors
-// font-sizes
-// fonts + default headers
 
-/*- Including functions and mixins
+/*- Functions and mixins
   --------------------------------------------------------------------------  */
 
 @import "./functions";
@@ -15,7 +12,7 @@
 @import "bootstrap/mixins/breakpoints";
 
 
-/*- Including variables
+/*- Project variables
   --------------------------------------------------------------------------  */
 
 @import './variables';
@@ -37,7 +34,7 @@
 @import 'bootstrap/modal';
 
 
-/*- Including utilities
+/*- Utility generators
   --------------------------------------------------------------------------  */
 
 @import './utilities';
@@ -47,3 +44,4 @@
   --------------------------------------------------------------------------  */
 
 @import './defaults';
+
