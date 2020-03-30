@@ -13,43 +13,42 @@
     And .mw-500, .mw-720 classes will be automatically generated for you.
   --------------------------------------------------------------------------  */
 
-  $widthsMap: (
-    );
-        
-    $CONTAINER_GUTTER: $SPACING_3;
+$widthsMap: (
+);
     
-    @each $prefix, $value in $widthsMap {
-      // Generate classes with padding to account for the container padding
-      .mw-#{$prefix} {
-        max-width: calc(#{$value} + 2 * #{$CONTAINER_GUTTER});
-        padding-right: $CONTAINER_GUTTER * $fixedFactor;
-        padding-right: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
-        padding-left: $CONTAINER_GUTTER * $fixedFactor;
-        padding-left: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
-      }
-        
-      // And also generate classes that do not have this padding
-      .mwc-#{$prefix} {
-        max-width: #{$value};
-      }
-    }
-        
-        
-    /*- .bleed-to-edge class uses a negative margins trick to force content to come
-        outside of it's container and all the way to the edge of the screen. A 
-        useful tool to deal with some layouts where some sections are within the 
-        .container but others then need to cover the entire width of the screen.
-      --------------------------------------------------------------------------  */
-    .bleed-to-edge {
-      // This is the important stuff
-      margin-right: calc(50% - 50vw);
-      margin-left: calc(50% - 50vw);
-      width: 100vw;
+$CONTAINER_GUTTER: $SPACING_3;
+
+@each $prefix, $value in $widthsMap {
+  // Generate classes with padding to account for the container padding
+  .mw-#{$prefix} {
+    max-width: calc(#{$value} + 2 * #{$CONTAINER_GUTTER});
+    padding-right: $CONTAINER_GUTTER * $fixedFactor;
+    padding-right: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+    padding-left: $CONTAINER_GUTTER * $fixedFactor;
+    padding-left: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+  }
     
-      // Adjust the below to suit your needs
-      padding-right: $CONTAINER_GUTTER * $fixedFactor;
-      padding-right: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
-      padding-left: $CONTAINER_GUTTER * $fixedFactor;
-      padding-left: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
-    }
+  // And also generate classes that do not have this padding
+  .mwc-#{$prefix} {
+    max-width: #{$value};
+  }
+}
     
+    
+/*- .bleed-to-edge class uses a negative margins trick to force content to come
+    outside of it's container and all the way to the edge of the screen. A 
+    useful tool to deal with some layouts where some sections are within the 
+    .container but others then need to cover the entire width of the screen.
+  --------------------------------------------------------------------------  */
+.bleed-to-edge {
+  // This is the important stuff
+  margin-right: calc(50% - 50vw);
+  margin-left: calc(50% - 50vw);
+  width: 100vw;
+
+  // Adjust the below to suit your needs
+  padding-right: $CONTAINER_GUTTER * $fixedFactor;
+  padding-right: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+  padding-left: $CONTAINER_GUTTER * $fixedFactor;
+  padding-left: calc(#{$CONTAINER_GUTTER} * var(--spacing-factor));
+}

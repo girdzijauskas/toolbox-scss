@@ -1,5 +1,7 @@
-// A function to generate responsive typography from the fonts map.
-
+/*###########################################################################
+  Generate responsive typography classes from the font sizes map
+  ########################################################################### */
+  
 @mixin responsive-typography ($prefix) {
 
   $START:               380;
