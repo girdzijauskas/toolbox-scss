@@ -1,4 +1,4 @@
-# toolbox scss
+# Toolbox SCSS
 
 toolbox scss is a framework aimed at generating a toolbox of reusable 
 single-purpose classes.
@@ -12,7 +12,7 @@ utility classes.
 ## Contents
 
 The framework includes some utility functions to deal with arrays and loops for
-class generation based on variables, as well as some bootstrap components such
+class generation based on variables, as well as some Bootstrap components such
 as grid and some utilities.
 
 ## Usage
@@ -20,12 +20,13 @@ as grid and some utilities.
 The usage of the framework can be summarised in this order:
 
 
-1a. Identify the individual elements of your front-end - color palettes, text styles 
+1.
+a. Identify the individual elements of your front-end - color palettes, text styles 
 (font families, sizes, weights), spacing, borders and any other re-usable
 patterns, such as transitions, and capture them in SASS variables. Examples of
 this can be found in the /variables folder.
 
-1b. Identify the default styles for your design system. Good defaults to cover are
+b. Identify the default styles for your design system. Good defaults to cover are
 things like text styles (h1, h2, ...), form and input elements, buttons, links,
 etc. 
 
