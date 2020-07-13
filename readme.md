@@ -6,8 +6,8 @@ single-purpose classes.
 This generally works the best with non-dynamic parts of your front-end such as 
 layout, text styles, spacing, etc.
 
-Bootstrap (v4) Grid is included by default for columns and some responsive
-utility classes.
+*Bootstrap (v4) Grid is included by default for columns and some responsive
+utility classes.*
 
 ## Contents
 
